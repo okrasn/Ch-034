@@ -4,14 +4,46 @@ define(function(require) {
     var _ = require("lodash"),
         $ = require("jquery"),
         Backbone = require("backbone"),
-        CMS = require("./modules/core/index");
-
+        CMS = require("./modules/core/index"),
+        Layout = require("backbone.layoutmanager"),
+        Validation = require("backbone.validation");
         require("bootstrap");
 
-    CMS.root = "/";
-    CMS.api = "http://localhost:3000/";
-    CMS.perPage = 5;
-    CMS.paginationSize = 5;
+    _.extend(CMS, {
+        root: "/",
+        guestPages: ["#login", "#register", "#reset"],
+        api: "http://localhost:8888/api/",
+        userRoles: {
+            user: {
+                name: "Користувач",
+                type: 0
+            },
+            teacher: {
+                name: "Вчитель",
+                type: 1
+            },
+            admin: {
+                name: "Адміністратор",
+                type: 2
+            }
+        },
+        perPage: 3,
+        paginationSize: 5,
+        typeTest: {
+            list   : 0,
+            answer : 1,
+            few    : 2
+        },
+        btnTestView: {
+            nextQuestion : 0,
+            close        : 1,
+            open         : 2
+        },
+        estimateMethod: ["simple", "proportional", "gravimetric"],
+        embeddable: ['avi', 'mp4', 'video'],
+        downloadable: ['zip', 'pdf', 'rar', 'doc', 'docx'],
+        externalLink: ['video']
+    });
 
     return CMS;
 });

@@ -56,6 +56,15 @@ module.exports = function(grunt ) {
                     'bootstrap.min.css': 'bootstrap/dist/css/bootstrap.min.css'
                 }
             },
+            js: {
+                options: {
+                    destPrefix: 'build/vendor'
+                },
+                files: {
+                    'ckeditor': 'ckeditor',
+                    'ckeditor/skins/office2013': 'ckeditor-office2013-skin/office2013'
+                }
+            },
             fonts: {
                 options: {
                     destPrefix: 'build/'
@@ -72,8 +81,8 @@ module.exports = function(grunt ) {
                 options: {
                     livereload: true
                 },
-                files: ['app/**', '!app/styles/'],
-                tasks: ['jshint:dev', 'sass']
+                files: ['app/**', '!app/styles/', '!app/img/**'],
+                tasks: ['jshint:dev', 'sass:dev', 'autoprefixer', 'trimtrailingspaces:main']
             }
         },
 
@@ -140,6 +149,25 @@ module.exports = function(grunt ) {
                 'moduleId': 'underscore',
                 'flags': ['--production']
             }
+        },
+
+        autoprefixer: {
+            dist: {
+                files: {
+                    'build/styles/main.min.css': 'build/styles/main.min.css'
+                }
+            }
+        },
+
+        trimtrailingspaces: {
+            main: {
+                src: ['app/**/*.js', '!app/img'],
+                options: {
+                    filter: 'isFile',
+                    encoding: 'utf8',
+                    failIfTrimmed: false
+                }
+            }
         }
     });
 
@@ -153,11 +181,13 @@ module.exports = function(grunt ) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-processhtml');
     grunt.loadNpmTasks('grunt-contrib-requirejs');
+    grunt.loadNpmTasks('grunt-autoprefixer');
+    grunt.loadNpmTasks('grunt-trimtrailingspaces');
+
 
     grunt.registerTask('build:dev', ['lodash:build','jshint:dev', 'sass']);
-    grunt.registerTask('build:prod', ['clean', 'jshint:dev', 'sass:prod', 'copy:images', 'bowercopy', 'processhtml', 'requirejs:compile']);
+    grunt.registerTask('build:prod', ['clean', 'jshint:dev', 'sass:prod', 'autoprefixer', 'copy:images', 'bowercopy', 'processhtml', 'requirejs:compile']);
     grunt.registerTask('server:dev', ['connect:dev', 'watch']);
     grunt.registerTask('server:prod', ['connect:prod', 'watch']);
     grunt.registerTask('default', []);
-    
 };

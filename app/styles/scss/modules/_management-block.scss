@@ -1,0 +1,130 @@
+#managementHeader {
+    & > tr > th {
+        font-size: 1.1em;
+        font-weight: bold;
+        &:not(:first-child) {
+            text-align: center;
+        }
+    }
+}
+#managementlist{
+    input[type="checkbox"] {
+        opacity: 100;
+    }
+    .managementVal[disabled]{
+        background: inherit;
+        border: none;
+        margin: 2px; 
+    }
+    .managementVal:not([disabled]){
+        max-width: 250px;
+    }
+    & > tr{
+        height: 43px;
+        background-color: transparent;
+            & > td:not(:first-child) {
+                text-align: center;
+            }
+        &.zebra {
+            background-color: #f9f9f9;
+        }
+        .glyphicon {
+             font-size: 1.3em;
+             cursor: pointer;
+        }
+        .glyphicon-list-alt{
+            text-decoration: none;
+            color: #333;
+        }
+    }
+    .editForm{
+        display: none;
+    }
+    .bold{
+        font-size: 15px;
+    }
+    .edit-row, .add-row {
+        display: none;
+        text-align: left;
+    }
+}
+
+#managementAddContainer{
+   min-width: 265px;
+    .btn{
+        width: 75px;
+        margin: 9px 0;
+    }
+    #managementAddInput{
+        margin: 0px 12px 0 9px;
+    }
+}
+
+#managementNav {
+    .active{
+        border-right: none;
+        margin-right: 0px;
+        border-radius: 0;
+    }
+}
+
+.addFortests {
+    width: 70%;
+}
+
+.managementVal {
+    width: 100%;
+}
+
+.table-striped{
+    margin-bottom: 0;
+}
+.table-responsive{
+    border: none;
+}
+.nav-tabs>li {
+    min-width: 100%;
+}
+.tab-area {
+    padding-right: 0;
+}
+.create-area {
+    background: #fff;
+    min-height: 350px;
+    padding-bottom: 20px;
+}
+.management-title{
+    margin: 20px 18px 20px 0;
+}
+.management-title h2{
+    display: inline;
+}
+.management-title .glyphicon {
+    cursor: pointer;
+}
+.tab-area .active {
+    text-decoration: none;
+    border-right: 0;
+}
+.nav-tabs {
+    border-bottom: none;
+    border-top: none;
+}
+#module-form {
+    margin: 10px 8px;
+}
+#resourceСontainer {
+    padding: 0 15px;
+    .glyphicon {
+         font-size: 1.3em;
+         cursor: pointer;
+    }
+}
+#resourceName[disabled]{
+    background: inherit;
+    border: none;
+    margin: 2px; 
+}
+#resourceUrl {
+    word-break: break-all;
+}

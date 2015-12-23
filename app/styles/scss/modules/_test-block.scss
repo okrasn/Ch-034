@@ -1,0 +1,113 @@
+/*  main area style   */
+.tests {
+    background-color: #fff;
+    margin: 0 auto 20px;
+    padding: 25px 35px;
+    max-width: 630px;
+    min-height: 450px;
+    position: relative;
+
+    .form-control {
+        width: 300px;
+    }
+}
+
+/* style for page: course-test   */
+#test-mode {
+    width: 30px;
+    height: 30px;
+    padding-top: 5px;
+    display: inline-block;
+    cursor: pointer;
+    background-color: #dae2e9;
+    opacity: 0.8;
+}
+
+#test-mode-not-list {
+    background: url(../img/test_mode.png) left 0px no-repeat;
+}
+
+#test-mode-not-page {
+     background: url(../img/test_mode.png) left -15px no-repeat;
+}
+
+#test-mode-not-list, #test-mode-not-page {
+    display: block;
+    width: 10px;
+    height: 11px;
+    margin: 6px 10px;
+}
+
+h1 {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 800;
+    padding-bottom: 10px;
+}
+
+.pagination .answer > a, .pagination .answer > a:hover {
+    background-color: #D5FCDD;
+    color: #06B05C;
+    border: 1px solid #95EBAC;
+}
+
+.pagination .active.answer > a, .pagination .active.answer > a:hover {
+    background-color: #ADE1B7;
+}
+
+.test {
+    /*list-style: decimal inside;*/
+    margin-bottom: 80px;
+}
+
+
+
+#area-submit {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 15px;
+}
+
+#test-submit {
+    text-align: center;
+}
+
+#next-question {
+    color: #337ab7;
+    border-color: #ddd;
+    width: 182px;
+}
+
+#count-questions {
+    display: block;
+    padding-top: 45px;
+}
+ 
+/* checkbox style*/
+.inline {
+    margin: 0 0 10px;
+    min-height: 20px;
+    font-size: inherit;
+}
+
+input[type="checkbox"] {
+    opacity: 0;
+    width: 21px;
+    height: 20px;
+    margin: 0;
+    top: 5px;
+    position: relative;
+}
+
+input[type="checkbox"] + label {
+    min-height: 20px;
+    display: inline-block;
+    margin-left: -20px;
+    padding: 0 0 0 30px;
+    background: url(../img/checkboxes.png) no-repeat 0 -23px;
+    font-weight: normal;
+}
+
+input[type="checkbox"]:checked + label {
+    background-position: 0 2px;
+}

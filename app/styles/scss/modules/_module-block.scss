@@ -1,0 +1,64 @@
+
+#module-container {
+    margin-bottom: $defaultMarginBottom;
+    background-color: $courseBgColor;
+    padding: $modulePadding;
+    
+    a:link {
+        text-decoration: underline;
+    }
+}
+a.module-item-title {
+    color: #000;
+    text-decoration: none;
+}
+.module-item-title:hover {
+    text-decoration: underline;
+}
+.left-side {
+    float: left;
+}
+.right-side {
+    float: right;
+}
+#module-info {
+    padding-top: 20px;
+}
+.bottom-line {
+    padding-top: 25px;
+}
+.btn.btn-success.disable {
+    background-color: #959595;
+    border: 1px solid #ccc;
+}
+.module-name {
+    font-size: 150%;
+    color: $aticleTitleColor;
+    font-weight: bold;
+}
+.resource-name {
+    font-size: 120%;
+    list-style-type: none;
+}
+.colon-padding {
+    padding: $colonPadding;
+}
+.top-margin{
+    margin-top: $marginTop;
+}
+.padding-right {
+    padding-right: $padding-right-30;
+}
+.padding-left {
+    padding-left: $padding-right-30;
+}
+#module-name {
+    margin: 5px 0 10px 0;
+    width: 70%;
+    padding: 1px;
+}
+#description {
+    width: 100%;
+    height: 300px;
+}
+

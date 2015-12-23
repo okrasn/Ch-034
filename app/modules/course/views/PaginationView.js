@@ -1,18 +1,15 @@
 define(function(require) {
     "use strict";
-    
+
     var CMS = require("CMS"),
 
     View = CMS.PaginationView.extend({
-
-        el: ".pagination",
-
-        render: function() {
-            this.$el.html(this.template(this.collection.info()));
-            return this;
+        el: false,
+        serialize: function() {
+            return {
+                info: this.collection.info()
+            };
         }
-
     });
-
     return View;
 });
